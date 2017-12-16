@@ -1,3 +1,4 @@
+
 <%= form_with(model: movie, local: true) do |form| %>
   <% if movie.errors.any? %>
     <div id="error_explanation">
@@ -12,36 +13,36 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :movie_title %>
+    <div class="mb1"><%= form.text_field :title, autocomplete: "off", placeholder: "Title", class: "radius" %></div>
   </div>
 
   <div class="field">
-    <%= form.label :release_year %>
-    <%= form.number_field :release_year, id: :movie_release_year %>
+    <div class="mb1"><%= form.text_field :release_year, autocomplete: "off", placeholder: "Release Year", class: "radius" %></div>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :movie_price %>
+    <div class="mb1"><%= form.text_field :price, autocomplete: "off", placeholder: "Price", class: "radius" %></div>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :movie_description %>
+    <div class="mb1"><%= form.text_field :description, autocomplete: "off", placeholder: "Description", class: "radius" %></div>
   </div>
 
   <div class="field">
-    <%= form.label :imdb_id %>
-    <%= form.text_field :imdb_id, id: :movie_imdb_id %>
+    <div class="mb1"><%= form.text_field :imdb_id, autocomplete: "off", placeholder: "Imdb Id", class: "radius" %></div>
   </div>
 
   <div class="field">
-    <%= form.label :poster_url %>
-    <%= form.text_field :poster_url, id: :movie_poster_url %>
+    <div class="mb1"><%= form.text_field :poster_url, autocomplete: "off", placeholder: "Movie Pposter", class: "radius" %></div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit%>
   </div>
+
 <% end %>
+
+
+
+
+
