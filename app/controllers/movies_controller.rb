@@ -7,10 +7,14 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
   
+  
+
   # GET /movies/1
   # GET /movies/1.json
   def show
-
+    @movie = Movie.find(params[:id])
+    @cart_action = @movie.cart_action current_user.try :id
+    
   end
 
   # GET /movies/new
@@ -62,16 +66,10 @@ class MoviesController < ApplicationController
     end
   end
 
-  def cart_action(current_user_id)
-  if $redis.sismember "cart#{current_user_id}", id
-    "Remove from"
-  else
-      "Add to"
-    end
-  end
   def cart_count
   $redis.scard "cart#{id}"
-end
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movie

@@ -9,12 +9,12 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+//= require jquery
 //= require rails-ujs
 
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation(); 
 $(window).load ->
   $('a[data-target]').click (e) ->
     e.preventDefault()
@@ -29,6 +29,7 @@ $(window).load ->
       $('.cart-count').html(data)
       $this.find('span').html(new_target)
       $this.data('target', new_target)
+
 $(window).load ->
   $('#mycart .fi-x').click (e) ->
     e.preventDefault()
@@ -37,3 +38,5 @@ $(window).load ->
     $.ajax url: url, type: 'put', success: (data) ->
       $('.cart-count').html(data)
       $this.closest('.cart-movie').slideUp()      
+
+});
